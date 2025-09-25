@@ -20,7 +20,7 @@
 - Backend: Python, FastAPI, SQLAlchemy, PostgreSQL, XGBoost
 - База данных: PostgreSQL
 - ML: XGBoost, scikit-learn
-- Frontend: React (описание фронтенда можно добавить позже)
+- Frontend: React 
 - Контроль версий: Git, GitHub
 
 ---
@@ -32,3 +32,4 @@
 - Python 3.9+
 - PostgreSQL (установлен и настроен)
 - Node.js и npm/yarn для фронтенда (если используется фронтенд из этого репозитория)
+
