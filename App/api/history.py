@@ -1,4 +1,3 @@
-# history.py
 from fastapi import APIRouter, Depends, Response, status
 from sqlalchemy.orm import Session
 from App.db.database import get_db

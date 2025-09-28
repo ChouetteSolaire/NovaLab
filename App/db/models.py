@@ -21,3 +21,13 @@ class PredictionHistory(Base):
     predicted_concentration = Column(Float, nullable=False)
     timestamp = Column(DateTime, default=datetime.utcnow)
     user = relationship("User", back_populates="predictions")
+
+class DatasetDetail(Base):
+    __tablename__ = "dataset_details"
+    id = Column(Integer, primary_key=True, index=True)
+    model_name = Column(String, nullable=False, index=True)
+    concentration = Column(Float, nullable=False)
+    conductivity_meter = Column(Float, nullable=False)
+    refractometr = Column(Float, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
+

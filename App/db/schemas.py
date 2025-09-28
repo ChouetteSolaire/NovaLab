@@ -30,7 +30,7 @@ class PredictionRequest(BaseModel):
 class PredictionResponse(BaseModel):
     model: str
     predicted_concentration: float
-
+    quality_score: float | None = None
 
 class PredictionHistoryItem(BaseModel):
     id: int
