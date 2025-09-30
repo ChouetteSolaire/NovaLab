@@ -44,3 +44,5 @@ local*.log
 .DS_Store
 Thumbs.db
 .vite/
+
+push.bat
