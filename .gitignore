@@ -7,6 +7,8 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+
+# Python build
 .Python
 build/
 develop-eggs/
@@ -30,12 +32,12 @@ share/python-wheels/
 *.log
 local*.log
 
-# Databases
+# Databases (важно! база сама в git не нужна)
 *.db
 *.sqlite
 *.sqlite3
 
-# Environment
+# Environment (реальные .env скрываем, но делаем .env.example)
 .env
 .env.local
 .env.*.local
@@ -44,23 +46,23 @@ local*.log
 .DS_Store
 Thumbs.db
 .vite/
-
-# Node.js (if frontend is with npm/yarn)
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Alembic (migrations folder)
-alembic/
-
-# Temporary files
 *.tmp
 *.swp
 *.bak
 
-alembic.ini
+# Node.js (frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.next/
+dist/
+build/
+
+# Alembic (Миграции нужны в GitHub → НЕ игнорируем!)
+# alembic/
+
+# Project-specific (твои временные файлы)
 u.txt
 TASK.txt
-
 app.log
