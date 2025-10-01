@@ -1,12 +1,10 @@
 from App.ml.ml_models import load_model, train_model, MODELS
-from App.db.database import get_db
 from App.db.dataset_service import get_dataset_df
 import numpy as np
 import logging
 from sqlalchemy.orm import Session
 
 logger = logging.getLogger(__name__)
-
 
 def predict_concentration(
         model_name: str,

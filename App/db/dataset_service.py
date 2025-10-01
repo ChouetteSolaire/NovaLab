@@ -4,7 +4,7 @@ import pandas as pd
 
 def get_dataset_df(db: Session, model_name: str) -> pd.DataFrame:
     """
-    Забирает данные из БД по модели и возвращает Pandas DataFrame
+    Забирает данные из БД по модели и возвращает Pandas DataFrame.
     """
     records = db.query(DatasetDetail).filter(DatasetDetail.model_name == model_name).all()
     if not records:

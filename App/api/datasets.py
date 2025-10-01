@@ -21,7 +21,6 @@ def get_dataset(model_name: str, db: Session = Depends(get_db)):
         for r in results
     ]
 
-
 @router.post("/{model_name}/quality")  # Для расчёта качества (используется в predict)
 def calculate_quality(model_name: str, data: dict, db: Session = Depends(get_db)):
     # Получаем все записи модели из базы

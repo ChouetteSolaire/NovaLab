@@ -30,4 +30,3 @@ class DatasetDetail(Base):
     conductivity_meter = Column(Float, nullable=False)
     refractometr = Column(Float, nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow)
-

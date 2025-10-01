@@ -43,6 +43,5 @@ class PredictionHistoryItem(BaseModel):
     class Config:
         from_attributes = True
 
-
 class PredictionHistoryResponse(BaseModel):
     history: List[PredictionHistoryItem]

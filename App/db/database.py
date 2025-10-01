@@ -3,7 +3,6 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 from dotenv import load_dotenv
 import os
 
-# Загружаем env (для безопасности; если нет .env, используем defaults)
 load_dotenv()
 
 # PostgreSQL (локально для разработки)

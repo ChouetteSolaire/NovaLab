@@ -5,7 +5,6 @@ from App.core.auth import get_current_user
 from App.db.models import User, PredictionHistory
 from App.db.schemas import PredictionRequest, PredictionResponse
 from App.ml.model_service import predict_concentration
-from App.db.dataset_service import get_dataset_df  # если понадобится напрямую
 import logging
 
 router = APIRouter()

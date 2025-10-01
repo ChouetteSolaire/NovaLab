@@ -5,7 +5,6 @@ from xgboost import XGBRegressor
 
 MODEL_DIR = 'models/'
 
-
 def train_model(name: str, df: pd.DataFrame) -> XGBRegressor:
     """
     Обучение модели на данных, переданных в DataFrame.
@@ -27,13 +26,11 @@ def train_model(name: str, df: pd.DataFrame) -> XGBRegressor:
 
     return model
 
-
 def load_model(name: str) -> XGBRegressor:
     model_path = os.path.join(MODEL_DIR, f'{name}.joblib')
     if not os.path.exists(model_path):
         raise FileNotFoundError(f"Model '{name}' is not trained yet")
     return joblib.load(model_path)
-
 
 # Кэш моделей
 MODELS = {}

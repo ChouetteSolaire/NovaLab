@@ -40,6 +40,3 @@ def verify_token(token: str):
         return user_email
     except JWTError:
         return None
-
-
-
