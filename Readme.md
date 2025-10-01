@@ -32,4 +32,3 @@
 - Python 3.9+
 - PostgreSQL (установлен и настроен)
 - Node.js и npm/yarn для фронтенда
-
