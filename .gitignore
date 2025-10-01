@@ -62,3 +62,5 @@ alembic/
 alembic.ini
 u.txt
 TASK.txt
+
+app.log
