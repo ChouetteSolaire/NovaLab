@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float, ForeignKey, DateTime
+from sqlalchemy import Column, Integer, String, Float, ForeignKey, DateTime, Text
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from App.db.database import Base
@@ -9,7 +9,8 @@ class User(Base):
     username = Column(String, unique=True, index=True, nullable=False)
     email = Column(String, unique=True, index=True, nullable=False)
     hashed_password = Column(String, nullable=False)
-    predictions = relationship("PredictionHistory", back_populates="user")  # <-- Добавь эту линию
+    predictions = relationship("PredictionHistory", back_populates="user")
+    lab_log_entries = relationship("LabLogEntry", back_populates="user")
 
 class PredictionHistory(Base):
     __tablename__ = "prediction_history"
@@ -30,3 +31,15 @@ class DatasetDetail(Base):
     conductivity_meter = Column(Float, nullable=False)
     refractometr = Column(Float, nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow)
+
+class LabLogEntry(Base):
+    __tablename__ = "lab_log_entries"  # исправлено
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    date = Column(DateTime, default=datetime.utcnow)
+    solution_name = Column(String, nullable=False, index=True)
+    volume_ml = Column(Float, nullable=False)
+    notes = Column(Text, default="")
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    user = relationship("User", back_populates="lab_log_entries")

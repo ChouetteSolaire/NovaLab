@@ -44,3 +44,20 @@ local*.log
 .DS_Store
 Thumbs.db
 .vite/
+
+# Node.js (if frontend is with npm/yarn)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Alembic (migrations folder)
+alembic/
+
+# Temporary files
+*.tmp
+*.swp
+*.bak
+
+alembic.ini
+u.txt

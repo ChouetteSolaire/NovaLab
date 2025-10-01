@@ -1,6 +1,6 @@
 from pydantic import BaseModel, EmailStr
 from datetime import datetime
-from typing import List
+from typing import List, Optional
 
 class UserCreate(BaseModel):
     username: str
@@ -45,3 +45,23 @@ class PredictionHistoryItem(BaseModel):
 
 class PredictionHistoryResponse(BaseModel):
     history: List[PredictionHistoryItem]
+
+class LabLogEntryBase(BaseModel):
+    date: Optional[datetime]
+    solution_name: str
+    volume_ml: float
+    notes: Optional[str] = ""
+
+class LabLogEntryCreate(LabLogEntryBase):
+    pass
+
+class LabLogEntryUpdate(LabLogEntryBase):
+    pass
+
+class LabLogEntryRead(LabLogEntryBase):
+    id: int
+    created_at: datetime
+    updated_at: datetime
+
+    class Config:
+        from_attributes = True
