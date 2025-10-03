@@ -1,68 +1,61 @@
-# IDE files
+# ==== IDE ====
 .idea/
 .vscode/
 
-# Python cache
+# ==== Python ====
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-
-# Python build
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# Logs
-*.log
-local*.log
-
-# Databases (важно! база сама в git не нужна)
 *.db
 *.sqlite
 *.sqlite3
 
-# Environment (реальные .env скрываем, но делаем .env.example)
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Build / dist
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# Alembic (нужны миграции, поэтому не игнорируем папку alembic)
+# alembic/
+
+# ==== Logs ====
+*.log
+local*.log
+
+# ==== Node.js / Frontend ====
+/frontend/node_modules
+/frontend/dist
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Vite
+.vite/
+
+# Next.js (если вдруг будешь пробовать)
+/.next/
+
+# ==== Environment ====
 .env
 .env.local
 .env.*.local
 
-# Misc
+# ==== Misc ====
 .DS_Store
 Thumbs.db
-.vite/
 *.tmp
 *.swp
 *.bak
 
-# Node.js (frontend)
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.next/
-dist/
-build/
-
-# Alembic (Миграции нужны в GitHub → НЕ игнорируем!)
-# alembic/
-
-# Project-specific (твои временные файлы)
+# ==== Project-specific ====
 u.txt
 TASK.txt
 app.log
