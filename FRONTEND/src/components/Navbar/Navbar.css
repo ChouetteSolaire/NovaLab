@@ -1,0 +1,172 @@
+:root {
+    --primary-dark: #171717; /* Тёмный фон для минимализма */
+    --primary-accent: #ffffff; /* Синий акцент для современности */
+    --hover-accent: #a1a1a1; /* Тёмный синий для hover */
+    --active-accent: #edeaea; /* Яркий синий для активного состояния */
+    --text-light: #e0e0e0; /* Светлый текст для хорошего контраста */
+    --border-light: #333; /* Тёмная граница для тёмной темы */
+    --shadow-dark: 0 10px 32px rgba(0, 0, 0, 0.5); /* Более сильная тень для глубины */
+    --accentr: #e5eaef;
+}
+
+/* Анимированный градиент для активных ссылок */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ripple эффект для кликов */
+@keyframes ripple {
+    to { transform: scale(4); opacity: 0; }
+}
+
+/* Навигационная панель */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background: var(--primary-dark);
+    border-right: 1px solid var(--border-light);
+    box-shadow: var(--shadow-dark);
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+/* Заголовок меню */
+.navbar-header {
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.navbar-logo {
+    color: var(--primary-accent);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+/* Список навигации */
+.navbar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+.navbar-list li {
+    margin-bottom: 8px;
+}
+
+/* Стили ссылок - овальные кнопки */
+.navbar-list a {
+    display: block;
+    padding: 12px 15px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 14px;
+    border: 1px solid transparent;
+    border-radius: 60px / 100%; /* Овальная форма */
+    background: transparent;
+    transition: all 0.3s cubic-bezier(0.25, 0.5, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-list a:focus {
+    outline: 2px solid var(--primary-accent);
+    box-shadow: 0 0 10px rgba(222, 233, 246, 0.8), 0 0 20px rgba(116, 128, 140, 0.4);
+}
+
+.navbar-list a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(72, 91, 112, 0.05), transparent);
+    transition: left 0.5s ease;
+}
+
+.navbar-list a:hover::before {
+    left: 100%;
+}
+
+.navbar-list a:hover {
+    border-color: var(--hover-accent);
+    color: var(--hover-accent);
+    box-shadow: 0 6px 20px rgba(134, 149, 165, 0.25);
+    transform: translateY(-2px);
+}
+
+
+/* Ripple эффект */
+.navbar-list a .ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 500ms linear;
+    background-color: rgba(195, 195, 195, 0.4);
+    pointer-events: none;
+    width: 100px;
+    height: 100px;
+    opacity: 0.75;
+    will-change: transform, opacity;
+}
+
+.logout-button {
+    display: block;
+    padding: 12px 15px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 14px;
+    border: 1px solid transparent;
+    border-radius: 60px / 100%; /* Ту же овальную форму */
+    background: transparent;
+    transition: all 0.3s cubic-bezier(0.25, 0.5, 0.25, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+}
+
+.logout-button:hover {
+    color: var(--hover-accent);
+    border-color: var(--hover-accent);
+    box-shadow: 0 6px 20px rgba(152, 152, 152, 0.25);
+    transform: translateY(-2px);
+}
+
+.logout-button:focus {
+    outline: 2px solid var(--primary-accent);
+    box-shadow: 0 0 8px rgba(143, 143, 143, 0.6);
+}
+
+.navbar-list li.active > a {
+    border: 2px solid var(--primary-accent);
+    border-radius: 60px / 100%;
+    color: var(--primary-accent);
+    box-shadow: 0 0 8px var(--primary-accent);
+    /* Можно добавить фон или другие эффекты */
+    background-color: rgba(80, 80, 80, 0.1);
+}
+
+/* Убери обводку с :focus, чтобы не конфликтовало */
+.navbar-list a:focus {
+    outline: none;
+    /* Можно оставить лёгкое выделение, но без рамки, например: */
+    box-shadow: 0 0 6px rgba(253, 253, 253, 0.5);
+}

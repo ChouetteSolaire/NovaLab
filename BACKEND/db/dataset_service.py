@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from App.db.models import DatasetDetail
+from BACKEND.db.models import DatasetDetail
 import pandas as pd
 
 def get_dataset_df(db: Session, model_name: str) -> pd.DataFrame:

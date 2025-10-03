@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, Response, status
 from sqlalchemy.orm import Session
-from App.db.database import get_db
-from App.core.auth import get_current_user
-from App.db.models import User, PredictionHistory
-from App.db.schemas import PredictionHistoryResponse, PredictionHistoryItem
+from BACKEND.db.database import get_db
+from BACKEND.core.auth import get_current_user
+from BACKEND.db.models import User, PredictionHistory
+from BACKEND.db.schemas import PredictionHistoryResponse, PredictionHistoryItem
 
 router = APIRouter()
 

@@ -1,6 +1,6 @@
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
-from App.api import login, register, me, predict, history, datasets, lablog
+from BACKEND.api import login, register, me, predict, history, datasets, lablog
 
 app = FastAPI()
 

@@ -5,8 +5,8 @@ from sqlalchemy import pool
 
 from alembic import context
 
-from App.db.database import Base
-from App.db.models import User, PredictionHistory, DatasetDetail, LabLogEntry
+from BACKEND.db.database import Base
+from BACKEND.db.models import User, PredictionHistory, DatasetDetail, LabLogEntry
 
 
 

@@ -1,7 +1,7 @@
 import numpy as np
-from App.db.database import SessionLocal, engine
-from App.db.models import Base, DatasetDetail
-from App.ml.dataset import DATASETS
+from BACKEND.db.database import SessionLocal, engine
+from BACKEND.db.models import Base, DatasetDetail
+from BACKEND.ml.dataset import DATASETS
 
 Base.metadata.create_all(bind=engine)
 

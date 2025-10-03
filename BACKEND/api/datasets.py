@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session
-from App.db.database import get_db
-from App.db.models import DatasetDetail
+from BACKEND.db.database import get_db
+from BACKEND.db.models import DatasetDetail
 from sklearn.linear_model import LinearRegression
 import numpy as np
 

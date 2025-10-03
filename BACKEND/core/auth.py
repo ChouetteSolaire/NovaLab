@@ -3,8 +3,8 @@ from fastapi.security import OAuth2PasswordBearer
 from datetime import datetime, timedelta
 from jose import JWTError, jwt
 from sqlalchemy.orm import Session
-from App.db.database import get_db
-from App.db.models import User
+from BACKEND.db.database import get_db
+from BACKEND.db.models import User
 from dotenv import load_dotenv
 import os
 

@@ -1,5 +1,5 @@
-from App.ml.ml_models import load_model, train_model, MODELS
-from App.db.dataset_service import get_dataset_df
+from BACKEND.ml.ml_models import load_model, train_model, MODELS
+from BACKEND.db.dataset_service import get_dataset_df
 import numpy as np
 import logging
 from sqlalchemy.orm import Session

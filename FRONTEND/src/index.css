@@ -1,0 +1,31 @@
+/* index.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #121212; /* Тёмный фон, как в Prediction.css */
+    color: #e0e0e0; /* Светлый текст по умолчанию */
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh; /* Чтобы фон покрывал всю высоту экрана */
+    transition: background-color 0.3s ease; /* Плавный переход при изменении темы */
+}
+html, #root {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+.main-content {
+    margin-left: 250px; /* Отступ, чтобы не перекрывать меню */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}

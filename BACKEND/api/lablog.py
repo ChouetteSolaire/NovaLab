@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
-from App.db.database import get_db
-from App.core.auth import get_current_user
-from App.db.models import LabLogEntry, User
-from App.db.schemas import LabLogEntryCreate, LabLogEntryUpdate, LabLogEntryRead
+from BACKEND.db.database import get_db
+from BACKEND.core.auth import get_current_user
+from BACKEND.db.models import LabLogEntry, User
+from BACKEND.db.schemas import LabLogEntryCreate, LabLogEntryUpdate, LabLogEntryRead
 from typing import List
 
 router = APIRouter()
